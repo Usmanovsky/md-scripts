@@ -32,7 +32,10 @@ if __name__ == "__main__":  # Accept command line inputs for gro files if script
 def atomsfinder(grofile):
     with open(grofile) as d:
         lines = d.readlines()
-        gro_name = grofile.split("/")[1]
+        if grofile.__contains__("/"):
+            gro_name = grofile.split("/")[1]
+        else:
+            gro_name = grofile
         try:                
             num_atoms = int(lines[1].split()[0])  # get the number of atoms in the gro file
             x, y, z = [ float(numbers) for numbers in lines[-1].split() ]  # grab the box size
