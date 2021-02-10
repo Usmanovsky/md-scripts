@@ -40,6 +40,24 @@ if __name__ == "__main__":  # Accept command line inputs for  ligpargen files on
     else:
         molnumy = 50
    
+# calculate molar ratios
+try:
+    a = int(molnumx)
+    b = int(molnumy)
+    if a > b:    
+        ratioA = str(a/b)
+        ratioB = str(b/b)
+        ratio = ratioA + ratioB
+    elif b > a:
+        ratioA = str(a/a)
+        ratioB = str(b/a)
+        ratio = ratioA + ratioB
+    else:
+        ratio = "11"
+except:
+    print("The ratio is set to 11 because something is wrong with your input")
+    ratio = "11"
+    
 
 # These are placeholders that are replaced in each DES top file
 x = 'molx'
@@ -67,8 +85,8 @@ for folder1 in pathway.glob(res1_path):
 #             print(res2)
             if res1 == res2:
                 pass
-            else:                
-                des_name = res1 + "-" + res2 + "11"  # Set DES folder name
+            else: 
+                des_name = res1 + "-" + res2 + ratio  # Set DES folder name
                 print(des_name)
     #             os.mkdir(f"X")        
                 try:
