@@ -93,6 +93,17 @@ echo "17\n" | gmx_gpu energy -f $name$e.edr -o $name-press.xvg
 echo "23\n" | gmx_gpu energy -f $name$e.edr -o $name-density.xvg
 mover edr
 
+# MSD
+{ echo 2; } | gmx_gpu msd -n $name.ndx -f $name$f.trr -s $name$f.tpr -o $name$m-$1.xvg
+
+{ echo 3; } | gmx_gpu msd -n $name.ndx -f $name$f.trr -s $name$f.tpr -o $name$m-$2.xvg
+mover msd
+
+# RDF
+{ echo 4; echo 4; echo 5; exec 0<&-; } | gmx_gpu rdf -n $name.ndx -f $name$f.trr -s $name$f.tpr -o $name$r-112.xvg
+{ echo 5; echo 5; exec 0<&-; } | gmx_gpu rdf -n $name.ndx -f $name$f.trr -s $name$f.tpr -o $name$r-22.xvg
+mover rdf
+
 # Trajectory
 { echo 2; echo q; } | gmx_gpu traj -n $name.ndx -f $name$f.trr -s $name$f.tpr -ox $1-$t.xvg
 { echo 3; echo q; } | gmx_gpu traj -n $name.ndx -f $name$f.trr -s $name$f.tpr -ox $2-$t.xvg

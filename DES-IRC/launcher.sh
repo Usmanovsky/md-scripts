@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH  --partition=V4V32_CAS40M192_L
-#SBATCH  --job-name=batch-DES
-#SBATCH --output=batchDES_18Jan2021.out
+#SBATCH  --job-name=lignin-2
+#SBATCH --output=lignin2_28Feb2021.out
 #SBATCH  --time=70:00:00
 #SBATCH  --mail-user=ulab222@uky.edu
 #SBATCH  --mail-type=ALL
