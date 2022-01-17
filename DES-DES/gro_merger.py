@@ -4,9 +4,11 @@ box on the right so its atoms have been shifted to the right
 using Gromacs gmx editconf. The new merged gro file will be 
 expanded using the bigger of the x, y coordinates and the 
 sum of the z coordinates (plus a 1.0nm margin in z direction)
+
+run by: python3 gro_merger.py Dea-Men11.gro Thy-Lid11.gro folder-path-to-save
 """
 
-import sys
+import sys, pandas as pd
 
 if __name__ == "__main__":  # Accept command line inputs for gro files if script is called directly.
     try:
@@ -29,6 +31,23 @@ if __name__ == "__main__":  # Accept command line inputs for gro files if script
 
 # print(gro1.split("/")[1])
 
+def minmax_xyz(gro):
+    df = pd.read_csv(gro, sep='\s+', skiprows=[0,1], header=None)
+    # df
+    x = df[3]
+    y = df[4]
+    z = df[5]
+    min_x = min(x)
+    min_y = min(y)
+    min_z = min(z)
+    max_x = max(x)
+    max_y = max(y)
+    max_z = max(z)
+    print(f"Minimum x y z for {gro}: \t {min_x}  {min_y}  {min_z}")
+    print(f"Maximum x y z for {gro}: \t {max_x}  {max_y}  {max_z}")
+    return max_x, max_y, max_z
+    
+    
 def atomsfinder(grofile):
     with open(grofile) as d:
         lines = d.readlines()
@@ -58,13 +77,19 @@ if gro2.__contains__("/"):
 else:
     gro2_name = gro2[0:-4]
 
-merged_groname = gro1_name + "_" + gro2_name + ".gro"
+merged_groname = gro1_name + "-" + gro2_name + ".gro"
 # print(merged_groname)
 
-new_x = max(x1, x2)  # New x dimension
-new_y = max(y1, y2)  # New y dimension
-new_z = z1 + z2 + 1.0  # New z dimension
+# Grab the largest x, y, z coordinates from the molecule positions in the gro files
+x3, y3, z3 = minmax_xyz(gro1)
+x4, y4, z4 = minmax_xyz(gro2)
 
+#  Select the largest coordinates to be used for the new merged box
+new_x = max(x1, x2, x3, x4)  # New x dimension
+new_y = max(y1, y2, y3, y4)  # New y dimension
+new_z = max(z1,z3) + max(z2, z4) + 0.2  # New z dimension
+
+#  Add the first gro file to the merged box
 with open(gro1, 'r') as r:
     lines = r.readlines()    
     with open(f"{save_to}/{merged_groname}",'w') as merged:        
@@ -78,7 +103,8 @@ with open(gro1, 'r') as r:
             else:
                 merged.write(line)
     
-    
+
+#  Add the second gro file to the merged box    
 with open(gro2, 'r') as r:
     lines = r.readlines() 
     with open(f"{save_to}/{merged_groname}",'a') as merged:
@@ -89,6 +115,8 @@ with open(gro2, 'r') as r:
                 merged.write(f"   {new_x}   {new_y}   {new_z}")
             else:
                 merged.write(line)
+
+
 
 print(f"Success!!! {merged_groname} has {total_atoms} atoms with dimensions {new_x} {new_y} {new_z}")
             
