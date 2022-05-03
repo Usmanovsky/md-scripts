@@ -1,5 +1,5 @@
 #!/bin/bash
-source /data/ulab222/gromacs-2021.2/bin/GMXRC
+source /path/to/gromacs-2021.2/bin/GMXRC
 
 
 name=$1$2-$3$4$5
@@ -21,6 +21,6 @@ mover(){
 { echo 4; echo 4; } | gmx_gpu density -f $name$f.trr  -s $name$f.tpr  -n $name.ndx  -o $3-density.xvg -relative > $3-density.log
 { echo 4; echo 5; } | gmx_gpu density -f $name$f.trr  -s $name$f.tpr  -n $name.ndx  -o $4-density.xvg -relative > $4-density.log
 
-/data/ulab222/myscri*/unxvg2txt.sh '*'
+/path/to/myscri*/unxvg2txt.sh '*'
 mover density-$name
 

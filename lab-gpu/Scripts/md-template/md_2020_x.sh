@@ -8,10 +8,10 @@ read -p 'GROMACS Version (last digit): ' version
 
 if [ $version == 1 ] || [ $version == 2 ]
 then
-	source /data/ulab222/gromacs2020.$version/bin/GMXRC
+	source /path/to/gromacs2020.$version/bin/GMXRC
 elif [ $version == 1 ]
 then
-	source /data/ulab222/gromacs-2020.$version/bin/GMXRC
+	source /path/to/gromacs-2020.$version/bin/GMXRC
 else
 	echo "You shall not pass. GROMACS version in path isn't correct. Goodbye. "
 exit

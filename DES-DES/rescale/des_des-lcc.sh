@@ -5,7 +5,7 @@ module load openmpi3/3.1.0
 module load cmake
 module load ccs/cuda/10.0.130
 
-source /project/qsh226_uksr/DES_usman/gromacs2021.2/bin/GMXRC
+source /path/to/gromacs2021.2/bin/GMXRC
 options_md="-ntmpi 1 -ntomp 10 -nb gpu -pme gpu -update gpu"
 
 # This script is for DES-DES systems. It runs a GROMACS md simulation using LibParGen files

@@ -3,12 +3,12 @@
 #SBATCH  --job-name=THY-LID11XX
 #SBATCH --output=thy_lid11XX.out
 #SBATCH  --time=1:00:00
-#SBATCH  --mail-user=ulab222@uky.edu
+#SBATCH  --mail-user=xxx@xxx
 #SBATCH  --mail-type=ALL
 #SBATCH -N 1 #No of nodes
 #SBATCH -n 8 #No of cores
 #SBATCH --gres=gpu:2 #no of gpu
-#SBATCH --account=gol_qsh226_uksr #Account to run under
+#SBATCH --account=xxx #Account to run under
 
 module purge
 module load gnu7/7.3.0
@@ -16,7 +16,7 @@ module load openmpi3/3.1.0
 module load cmake
 module load ccs/cuda/10.0.130
 
-source /project/qsh226_uksr/gromacs2020/bin/GMXRC
+source /path/to/gromacs2020/bin/GMXRC
 options_md="-ntmpi 8 -npme 4 -nb gpu"
 
 # This script works on the LCC. It runs a GROMACS md simulation using LibParGen files

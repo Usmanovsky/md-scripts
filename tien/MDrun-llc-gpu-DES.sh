@@ -13,7 +13,7 @@
 #SBATCH --mail-type ALL				#Send email on start/end
 #SBATCH --mail-user mng228@uky.edu		#Where to send email
 
-#SBATCH --account=gol_qsh226_uksr		#Name of account to run under
+#SBATCH --account=xxx		#Name of account to run under
 
 echo $CUDA_VISIBLE_DEVICES
 cd fold-10/600oxyEO-rerun/Z3-EO2-Tf2N/200ZW-200Li/

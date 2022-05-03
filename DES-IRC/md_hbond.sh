@@ -1,5 +1,5 @@
 #!/bin/bash
-source /project/qsh226_uksr/DES_usman/gromacs2021.2/bin/GMXRC
+source /path/to/gromacs2021.2/bin/GMXRC
 options_md="-ntmpi 1 -ntomp 8 -update gpu -nb gpu"
 
 # This script works on the LCC. It runs a GROMACS md simulation using LibParGen files

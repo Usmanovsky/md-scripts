@@ -11,7 +11,7 @@
 #SBATCH --mail-type ALL				#Send email on start/end
 #SBATCH --mail-user tien.nguyen@uky.edu		#Where to send email
 
-#SBATCH --account=col_qsh226_uksr		#Name of account to run under
+#SBATCH --account=xxx		#Name of account to run under
 
 
 module purge
@@ -19,7 +19,7 @@ module load gnu/5.4.0
 module load openmpi/1.10.7
 module load ccs/gromacs/skylake/2019
 module load ccs/anaconda/3
-source /project/qsh226_uksr/gromacs-2020-CPU/gromacs-exe/bin/GMXRC
+source /path/to/gromacs-2020-CPU/gromacs-exe/bin/GMXRC
 
 #module load ccs/gromacs/skylake/2019
 #source /opt/ohpc/pub/libs/gnu/openmpi/ccs/gromacs/2019/skylake/bin/GMXRC
