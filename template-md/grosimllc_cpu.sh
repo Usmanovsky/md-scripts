@@ -3,11 +3,11 @@
 #SBATCH  --job-name=ChC-UreaMar27
 #SBATCH --output=chcureaMar27.out
 #SBATCH  --time=60:25:15
-#SBATCH  --mail-user=ulab222@uky.edu
+#SBATCH  --mail-user=xxx@xxx
 #SBATCH  --mail-type=ALL
 #SBATCH -N 1 #No of nodes
 #SBATCH -n 30 #No of cores
-#SBATCH --account=col_qsh226_uksr #Account to run under
+#SBATCH --account=xxx #Account to run under
 
 module purge
 module load gnu/5.4.0
@@ -15,7 +15,7 @@ module load openmpi/1.10.7
 module load ccs/gromacs/skylake/2019
 module load ccs/anaconda/3
 
-source /project/qsh226_uksr/gromacs-2020-CPU/gromacs-exe/bin/GMXRC
+source /path/to/gromacs-2020-CPU/gromacs-exe/bin/GMXRC
 options_md="-ntmpi 8 -npme 4"
 
 # This script runs a GROMACS md simulation

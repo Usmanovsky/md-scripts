@@ -3,12 +3,12 @@
 #SBATCH  --job-name=TestFolder
 #SBATCH --output=testfolder.out
 #SBATCH  --time=20:00:00
-#SBATCH  --mail-user=ulab222@uky.edu
+#SBATCH  --mail-user=xxx@xxx
 #SBATCH  --mail-type=ALL
 #SBATCH -N 1 #No of nodes
 #SBATCH -n 32 #No of cores
 #SBATCH --gres=gpu:4				#Number of GPU's
-#SBATCH --account=gol_qsh226_uksr #Account to run under
+#SBATCH --account=xxx #Account to run under
 
 module purge
 module load gnu/5.4.0
@@ -19,7 +19,7 @@ module load ccs/gromacs/skylake-gpu/2019
 source /opt/ohpc/pub/libs/gnu/openmpi/ccs/gromacs/2019/skylake-gpu/bin/GMXRC
 
 
-#source /project/qsh226_uksr/gromacs-2020-CPU/gromacs-exe/bin/GMXRC
+#source /path/to/gromacs-2020-CPU/gromacs-exe/bin/GMXRC
 options_md="-ntmpi 8 -npme 4 -nb gpu"
 #options_md="-nsteps 4000 -v -pin on -nb gpu"
 

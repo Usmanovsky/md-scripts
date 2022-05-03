@@ -6,7 +6,7 @@ module load cmake
 module load ccs/cuda/10.0.130
 module load ccs/conda/python-3.8.0
 
-source /project/qsh226_uksr/DES_usman/gromacs2021.2/bin/GMXRC
+source /path/to/gromacs2021.2/bin/GMXRC
 
 # how to run: ../../density_des-lcc.sh CHO URE Cld 11 50
 # $1, $2 and $3 are the DES compound names, #4 is the molar ratio

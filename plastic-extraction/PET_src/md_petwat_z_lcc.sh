@@ -3,12 +3,12 @@
 #SBATCH  --job-name=shiftedNeutralPET_6.5_7.0
 #SBATCH --output=neutralPET_3Nov2021.out
 #SBATCH  --time=2:10:00
-#SBATCH  --mail-user=ulab222@uky.edu
+#SBATCH  --mail-user=xxx@xxx
 #SBATCH  --mail-type=ALL
 #SBATCH -N 1 #No of nodes
 #SBATCH -n 10 #No of cores
 #SBATCH --gres=gpu:1 #No of GPUs
-#SBATCH --account=gol_qsh226_uksr #Account to run under
+#SBATCH --account=xxx #Account to run under
 
 module purge
 module load gnu7/7.3.0
@@ -16,7 +16,7 @@ module load openmpi3/3.1.0
 module load cmake
 module load ccs/cuda/10.0.130
 
-source /project/qsh226_uksr/DES_usman/gromacs2021.2/bin/GMXRC
+source /path/to/gromacs2021.2/bin/GMXRC
 options_md="-ntmpi 1 -ntomp 10 -nb gpu -pme gpu"
 
 # This script is for water systems with plastic. It runs a GROMACS md simulation using LibParGen files

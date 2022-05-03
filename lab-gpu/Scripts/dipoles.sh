@@ -1,5 +1,5 @@
 #!/bin/bash
-source /data/ulab222/gromacs2020.2/bin/GMXRC
+source /path/to/gromacs2020.2/bin/GMXRC
 
 name=$1-$2$3
 f='_md'
@@ -17,9 +17,9 @@ mover(){
 { echo 3; } | gmx_gpu dipoles -f $name$f.trr  -s $name$f.tpr  -n $name.ndx  -o $2-dipoles.xvg -slab $2-slab.xvg -sl 20 > $2-dipole.log
 { echo 4; } | gmx_gpu dipoles -f $name$f.trr  -s $name$f.tpr  -n $name.ndx  -o $w-dipoles.xvg -slab $w-slab.xvg -sl 20 > $w-dipole.log
 
-python3 /data/ulab222/script/xvg2dat.py $1-slab.xvg
-python3 /data/ulab222/script/xvg2dat.py $2-slab.xvg
-python3 /data/ulab222/script/xvg2dat.py $w-slab.xvg
+python3 /path/to/script/xvg2dat.py $1-slab.xvg
+python3 /path/to/script/xvg2dat.py $2-slab.xvg
+python3 /path/to/script/xvg2dat.py $w-slab.xvg
 
 mover dipoles-$name
 

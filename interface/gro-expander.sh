@@ -1,5 +1,5 @@
 #!/bin/bash
-source /data/ulab222/gromacs2020.2/bin/GMXRC
+source /path/to/gromacs2020.2/bin/GMXRC
 
 x=$4
 y=$5

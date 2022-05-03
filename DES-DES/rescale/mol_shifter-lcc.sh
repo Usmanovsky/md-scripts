@@ -1,5 +1,5 @@
 #!/bin/bash
-source /project/qsh226_uksr/DES_usman/gromacs2021.2/bin/GMXRC
+source /path/to/gromacs2021.2/bin/GMXRC
 
 # This script shifts molecules in a box along the z axis. $4 is the length to shift.
 # This assumes all your files are in the same working directory.

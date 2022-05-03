@@ -3,12 +3,12 @@
 #SBATCH  --job-name=DES-DES-Interface
 #SBATCH --output=ML21-interface_8Feb2021.out
 #SBATCH  --time=1-05:05:00
-#SBATCH  --mail-user=ulab222@uky.edu
+#SBATCH  --mail-user=xxx@xxx
 #SBATCH  --mail-type=ALL
 #SBATCH -N 1 #No of nodes
 #SBATCH -n 8 #No of cores
 #SBATCH --gres=gpu:1 #No of GPUs
-#SBATCH --account=gol_qsh226_uksr #Account to run under
+#SBATCH --account=xxx #Account to run under
 
 module purge
 module load gnu7/7.3.0
@@ -16,8 +16,8 @@ module load openmpi3/3.1.0
 module load cmake
 module load ccs/cuda/10.0.130
 
-source /project/qsh226_uksr/DES_usman/gromacs2020.2/bin/GMXRC
-#source /data/ulab222/gromacs-2020.4/bin/GMXRC
+source /path/to/gromacs2020.2/bin/GMXRC
+#source /path/to/gromacs-2020.4/bin/GMXRC
 options_md="-ntmpi 1 -ntomp 8 -nb gpu -pme gpu"
 
 # This script is for DES-DES systems. It runs a GROMACS md simulation using LibParGen files

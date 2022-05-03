@@ -17,13 +17,13 @@ do
 	    module load cmake
 	    module load ccs/cuda/10.0.130
 	    module load ccs/conda/python-3.8.0
-            source /project/qsh226_uksr/DES_usman/gromacs2021.2/bin/GMXRC
+            source /path/to/gromacs2021.2/bin/GMXRC
             scriptpath=~/myscri*
             ;;
         "${options[1]}")
             echo "you chose $opt"
-            source /data/ulab222/gromacs-2021.2/bin/GMXRC
-            scriptpath=/data/ulab222/myscri*/Analysis
+            source /path/to/gromacs-2021.2/bin/GMXRC
+            scriptpath=/path/to/myscri*/Analysis
             ;;
         "Quit")
             break
