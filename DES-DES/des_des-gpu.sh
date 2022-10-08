@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /path/to/gromacs-2021.2/bin/GMXRC
+source /data/ulab222/gromacs-2021.2/bin/GMXRC
 options_md="-ntmpi 1 -ntomp 8 -nb gpu -pme gpu -update gpu"
 
 # This script is for DES-DES systems. It runs a GROMACS md simulation using LibParGen files

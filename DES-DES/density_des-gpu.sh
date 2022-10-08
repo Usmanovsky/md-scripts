@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source /path/to/gromacs2021.2/bin/GMXRC
-source /path/to/gromacs-2021.2/bin/GMXRC
+source /project/qsh226_uksr/DES_usman/gromacs2021.2/bin/GMXRC
+source /data/ulab222/gromacs-2021.2/bin/GMXRC
 # how to run: ../../density_des-lcc.sh CHO URE Cld 11 50
 # $1, $2 and $3 are the DES compound names, #4 is the molar ratio
 # $% is the number of slicses for gmx density

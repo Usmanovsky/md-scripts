@@ -3,12 +3,12 @@
 #SBATCH  --job-name=dm11_500-petwat_restrained
 #SBATCH --output=dm11petwat_3Nov2021.out
 #SBATCH  --time=21:10:00
-#SBATCH  --mail-user=xxx@xxx
+#SBATCH  --mail-user=ulab222@uky.edu
 #SBATCH  --mail-type=ALL
 #SBATCH -N 1 #No of nodes
 #SBATCH -n 10 #No of cores
 #SBATCH --gres=gpu:1 #No of GPUs
-#SBATCH --account=xxx #Account to run under
+#SBATCH --account=gol_qsh226_uksr #Account to run under
 
 module purge
 module load gnu7/7.3.0
@@ -17,7 +17,7 @@ module load cmake
 module load ccs/cuda/10.0.130
 module load ccs/conda/python-3.8.0
 
-#source /path/to/gromacs2021.2/bin/GMXRC
+#source /project/qsh226_uksr/DES_usman/gromacs2021.2/bin/GMXRC
 
 # This script shifts molecules in a box along the z axis. $4 is the length to shift.
 # This assumes all your files are in the same working directory.

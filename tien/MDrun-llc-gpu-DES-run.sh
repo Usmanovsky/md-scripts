@@ -5,7 +5,7 @@ module load gnu7/7.3.0
 module load openmpi3/3.1.0
 module load ccs/cuda/10.0.130
 #module load ccs/gromacs/skylake-gpu/2019
-source /path/to/gromacs2020/bin/GMXRC
+source /project/qsh226_uksr/gromacs2020/bin/GMXRC
 
 #GROMACS single node with 4 GPUs using thread-MPI and allow GROMACS to determine the launch parameters (ntmpi, ntomp) on it's own.
 #gmx grompp -f pme.mdp

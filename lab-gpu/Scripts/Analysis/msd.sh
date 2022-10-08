@@ -2,7 +2,7 @@
 
 # Usman Abbas 08/24/2020
 # This script calculates msd for a trajectory using 4 different begin and end times. This is supposed to help us get some sort of error estimate.
-source /path/to/gromacs2020.2/bin/GMXRC
+source /data/ulab222/gromacs2020.2/bin/GMXRC
 
 name=$1-$2$3
 one=1

@@ -3,12 +3,12 @@
 #SBATCH  --job-name=PET_in_Water
 #SBATCH --output=PET-WAT_29Oct2021.out
 #SBATCH  --time=25:10:00
-#SBATCH  --mail-user=xxx@xxx
+#SBATCH  --mail-user=ulab222@uky.edu
 #SBATCH  --mail-type=ALL
 #SBATCH -N 1 #No of nodes
 #SBATCH -n 10 #No of cores
 #SBATCH --gres=gpu:1 #No of GPUs
-#SBATCH --account=xxx #Account to run under
+#SBATCH --account=gol_qsh226_uksr #Account to run under
 
 module purge
 module load gnu7/7.3.0
@@ -16,7 +16,7 @@ module load openmpi3/3.1.0
 module load cmake
 module load ccs/cuda/10.0.130
 
-source /path/to/gromacs2021.2/bin/GMXRC
+source /project/qsh226_uksr/DES_usman/gromacs2021.2/bin/GMXRC
 options_md="-ntmpi 1 -ntomp 10 -nb gpu -pme gpu"
 
 # This script is for water systems with plastic. It runs a GROMACS md simulation using LibParGen files

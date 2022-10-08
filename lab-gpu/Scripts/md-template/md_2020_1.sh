@@ -4,7 +4,7 @@
 # $1 and $2 are the gro files, $name is the boxed gro file, $name1 is the Energy minimizationmisation mdp,
 # $name2 is the NPT mdp, $name3 is the production mdp
 
-source /path/to/gromacs-2020.1/bin/GMXRC
+source /data/ulab222/gromacs-2020.1/bin/GMXRC
 options_md="-ntmpi 8 -npme 4"
 
 a=$4

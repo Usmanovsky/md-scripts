@@ -1,5 +1,5 @@
 #!/bin/bash
-source /path/to/gromacs-2021.2/bin/GMXRC
+source /data/ulab222/gromacs-2021.2/bin/GMXRC
 
 # This script calculates dipoles for the four components in a DES-DES box. For CHOURE11-DeaMen11, run by:
 # ./dipoles_des-des.bash CHO URE Dea Men 11
@@ -21,6 +21,6 @@ mover(){
 { echo 4; } | gmx_gpu dipoles -f $name$f.trr  -s $name$f.tpr  -n $name.ndx  -o $3-dipoles.xvg -slab $3-slab.xvg -sl 70 > $3-dipole.log
 { echo 5; } | gmx_gpu dipoles -f $name$f.trr  -s $name$f.tpr  -n $name.ndx  -o $4-dipoles.xvg -slab $4-slab.xvg -sl 70 > $4-dipole.log
 
-/path/to/myscri*/unxvg2txt.sh '*'
+/data/ulab222/myscri*/unxvg2txt.sh '*'
 mover dipole-$name
 

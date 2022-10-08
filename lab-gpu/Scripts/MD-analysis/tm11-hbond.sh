@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # $1, $2, $3 = (Dea, Lid, 21). $4 is the name of the atoms in considertion, $5 is the type of analysis e.g. hac, life, num
-source /path/to/gromacs2020.2/bin/GMXRC
+source /data/ulab222/gromacs2020.2/bin/GMXRC
 name=$1-$2$3
 one=1
 two=2

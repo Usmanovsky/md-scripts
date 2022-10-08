@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source /path/to/gromacs2021.2/bin/GMXRC
-#source /path/to/gromacs-2021.2/bin/GMXRC
+source /project/qsh226_uksr/DES_usman/gromacs2021.2/bin/GMXRC
+#source /data/ulab222/gromacs-2021.2/bin/GMXRC
 
 # This script rescales a box along the x and y axis. $4 and $5 are 
 # the rescaling factors in x and y axis respectively.

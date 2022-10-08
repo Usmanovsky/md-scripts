@@ -3,12 +3,12 @@
 #SBATCH  --job-name=CHO-URE12
 #SBATCH --output=CHO-URE12-1Jul2021.out
 #SBATCH  --time=40:05:00
-#SBATCH  --mail-user=xxx@xxx
+#SBATCH  --mail-user=ulab222@uky.edu
 #SBATCH  --mail-type=ALL
 #SBATCH -N 1 #No of nodes
 #SBATCH -n 10 #No of cores
 #SBATCH --gres=gpu:1 #No of GPUs
-#SBATCH --account=xxx #Account to run under
+#SBATCH --account=gol_qsh226_uksr #Account to run under
 
 module purge
 module load gnu7/7.3.0
@@ -17,12 +17,12 @@ module load cmake
 module load ccs/cuda/10.0.130
 module load ccs/conda/python-3.8.0
 
-source /path/to/gromacs2021.2/bin/GMXRC
+source /project/qsh226_uksr/DES_usman/gromacs2021.2/bin/GMXRC
 # This script inserts 3 compounds ($1, $2, $3) into a box for DES-DES simulations.
 # $4 is molar ratio, $5 is number of molsA, $6 is box length, $7 is radius between
 # molecules.
 
-#source /path/to/gromacs-2021.2/bin/GMXRC
+#source /data/ulab222/gromacs-2021.2/bin/GMXRC
 options_md="-ntmpi 1 -ntomp 10 -nb gpu -pme gpu -update gpu"
 
 a=$5

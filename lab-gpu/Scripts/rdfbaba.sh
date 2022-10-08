@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /path/to/gromacs2020.2/bin/GMXRC
+source /data/ulab222/gromacs2020.2/bin/GMXRC
 #chmod 755 $0
 b='_boxed'
 r='rdf'

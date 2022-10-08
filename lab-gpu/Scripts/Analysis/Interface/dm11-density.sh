@@ -1,5 +1,5 @@
 #!/bin/bash
-source /path/to/gromacs-2020.4/bin/GMXRC
+source /data/ulab222/gromacs-2020.4/bin/GMXRC
 
 
 name=$1-$2$3
@@ -37,14 +37,14 @@ mover(){
 { echo 10; echo 10; } | gmx_gpu density -f $name$f.trr  -s $name$f.tpr  -n $name$x.ndx  -o $o0-$2-density.xvg -relative > $o0-$2-density.log
 { echo 11; echo 11; } | gmx_gpu density -f $name$f.trr  -s $name$f.tpr  -n $name$x.ndx  -o $c-$2-density.xvg -relative > $c-$2-density.log
 
-python3 /path/to/script/xvg2dat.py $1-density.xvg
-python3 /path/to/script/xvg2dat.py $2-density.xvg
-python3 /path/to/script/xvg2dat.py $w-density.xvg
-python3 /path/to/script/xvg2dat.py $o2-$1-density.xvg
-python3 /path/to/script/xvg2dat.py $o0-$1-density.xvg
-python3 /path/to/script/xvg2dat.py $c-$1-density.xvg
-python3 /path/to/script/xvg2dat.py $o0-$2-density.xvg
-python3 /path/to/script/xvg2dat.py $c-$2-density.xvg
+python3 /data/ulab222/script/xvg2dat.py $1-density.xvg
+python3 /data/ulab222/script/xvg2dat.py $2-density.xvg
+python3 /data/ulab222/script/xvg2dat.py $w-density.xvg
+python3 /data/ulab222/script/xvg2dat.py $o2-$1-density.xvg
+python3 /data/ulab222/script/xvg2dat.py $o0-$1-density.xvg
+python3 /data/ulab222/script/xvg2dat.py $c-$1-density.xvg
+python3 /data/ulab222/script/xvg2dat.py $o0-$2-density.xvg
+python3 /data/ulab222/script/xvg2dat.py $c-$2-density.xvg
 
 mover densities-$name
 

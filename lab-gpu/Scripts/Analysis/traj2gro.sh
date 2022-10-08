@@ -1,5 +1,5 @@
 #!/bin/bash
-source /path/to/gromacs-2020.4/bin/GMXRC
+source /data/ulab222/gromacs-2020.4/bin/GMXRC
 
 # This script converts trr or xtc to gro files. $4 is the trr/xtc file name
 # This assumes all your files are in the same working directory.
