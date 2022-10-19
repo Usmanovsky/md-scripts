@@ -2,16 +2,25 @@
 # and secondary structure from the dat file (produced by dssp in a conda env) and 
 # stores the results in an .out file
 
+# 10/19/2022 changed the PLDDT column from line.split()[4] to line.split()[-2]
+# to cater for cases where line.split() does not contain 12 items.
+# Added a try block for cases where .dat files exist instead of .dssp
+
 import sys
 import numpy
 
 name=sys.argv[1]
 
 pdb_name=name+".pdb"
-ss_name=name+".dat"
+ss_name=name+".dssp"
 out_name=name+".out"
 
-file_ss=open(ss_name,"r")
+try:
+    file_ss=open(ss_name,"r")
+except:
+    ss_name=name+".dat"
+    file_ss=open(ss_name,"r")
+
 file_out=open(out_name,"w+")
 
 # skip the first 28 line for the secondary structure file
@@ -27,4 +36,5 @@ with open(pdb_name) as file_pdb:
         # print(ss)
         if (ss==' '):
           ss='~'
-        print(line.split()[3],line.split()[10],ss,file=file_out)
+        
+        print(line.split()[3],line.split()[-2],ss,file=file_out)
