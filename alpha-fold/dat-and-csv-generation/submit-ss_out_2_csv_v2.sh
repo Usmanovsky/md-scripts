@@ -16,4 +16,4 @@ conda init
 source ~/.bashrc
 conda activate py310
 
-./ss_out_2_csv.sh "$1" >> csv-log.out
+./ss_out_2_csv_v2.sh "$1" >> csv-log.out
