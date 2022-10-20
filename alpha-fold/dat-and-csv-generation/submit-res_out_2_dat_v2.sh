@@ -16,4 +16,4 @@ conda init
 source ~/.bashrc
 conda activate py310
 
-./res_out_2_dat.sh "$1" >> dat-log.out
+./res_out_2_dat_v2.sh "$1" >> dat-log.out
