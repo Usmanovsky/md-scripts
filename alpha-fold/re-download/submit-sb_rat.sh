@@ -13,6 +13,7 @@
 
 module load Miniconda3
 conda init bash
+source ~/.bashrc
 conda activate py310
 
-./submit-dat-to-out.sh $1
+./submit-dat-to-out.sh $1 >> rat_logs.log

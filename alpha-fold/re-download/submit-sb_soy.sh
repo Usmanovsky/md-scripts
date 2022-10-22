@@ -16,4 +16,4 @@ conda init bash
 source ~/.bashrc
 conda activate py310
 
-./submit-dat-to-out.sh $1
+./submit-dat-to-out.sh $1 >> soy_logs.log
