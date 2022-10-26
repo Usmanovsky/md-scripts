@@ -11,5 +11,6 @@
 #SBATCH --mail-type ALL         # Send email when job starts/ends
 #SBATCH --mail-user ulab222@uky.edu   # Where email is sent to (optional)
 
-
+# This runs a script to download pdb files from a filelist containing AlphaFold IDs
+# $1 is the filelist path where the AlphaFold DB ID's are located.
 ../pdb-downloader.sh $1

@@ -1,11 +1,11 @@
 # extract the ss information based on number of residues
-
+# 10/26/2022 added 5-turn-helix
 import sys
 
 file_path = sys.argv[1]
 res_num = sys.argv[2]
-ss=['~','E','B','T','S','H','G']
-ss_name=['coil','beta-sheet','beta-bridge','turn','bend','ahelix','three-helix']
+ss=['~','E','B','T','S','H','G','I']
+ss_name=['coil','beta-sheet','beta-bridge','turn','bend','ahelix','three-helix','five-helix']
 
 output_file=["" for i in range(len(ss_name))]
 
