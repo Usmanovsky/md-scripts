@@ -1,11 +1,10 @@
 # extract the information based on residue
-# twenty amino acid
-
+# 8 secondary structures
+# Added a new SS (5-turn-helix)
 import sys
 
-ss=['~','E','B','T','S','H','G']
-ss_name=['coil','beta-sheet','beta-bridge','turn','bend','ahelix','three-helix']
-
+ss=['~','E','B','T','S','H','G','I']
+ss_name=['coil','beta-sheet','beta-bridge','turn','bend','ahelix','three-helix','five-helix']
 output_file=["" for i in range(len(ss_name))]
 
 for i in range(len(ss_name)):

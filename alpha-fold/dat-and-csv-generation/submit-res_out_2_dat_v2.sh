@@ -16,4 +16,5 @@ conda init
 source ~/.bashrc
 conda activate py310
 
+# $1 is the location of the out-folders.
 ./res_out_2_dat_v2.sh "$1" >> dat-log.out

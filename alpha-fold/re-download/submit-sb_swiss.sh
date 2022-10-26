@@ -16,4 +16,5 @@ conda init bash
 source ~/.bashrc
 conda activate py310
 
+# $1 is the folder path where the out-folders are located.
 ./submit-dat-to-out.sh $1 >> swiss5_dat2out.log
