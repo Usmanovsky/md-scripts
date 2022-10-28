@@ -10,11 +10,11 @@
 #SBATCH --mail-type ALL                         #Send email on start/end
 #SBATCH --mail-user  xsh230@uky.edu             #Where to send email
 
-#SBATCH --account=coa_qsh226_uksr               #Name of account to run under
+#SBATCH --account=xxx               #Name of account to run under
 
 
 module load ccs/conda/python 
-#conda activate /project/qsh226_uksr/qsh226/dssp 
+#conda activate /path/to/qsh226/dssp 
 
 for file in *.pdb
 do
