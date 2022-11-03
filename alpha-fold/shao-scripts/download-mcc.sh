@@ -11,7 +11,7 @@
 #SBATCH --mail-type ALL				#Send email on start/end
 #SBATCH --mail-user  qsh226@uky.edu		#Where to send email
 
-#SBATCH --account=xxx		#Name of account to run under
+#SBATCH --account=coa_qsh226_uksr		#Name of account to run under
 
 
 xargs -n 1 -P 512 wget < url-batch5.csv
