@@ -21,6 +21,10 @@ DDT_std=df['PLDDT'].std()
 DDT_75=df['PLDDT'].quantile(0.75)
 DDT_25=df['PLDDT'].quantile(0.25)
 
+if name.__contains__('total-ss'):
+    name = 'total-ss'
+
+
 print(name.split('/')[-1])
 print('median: ', DDT_median)
 print('min: ', DDT_min)

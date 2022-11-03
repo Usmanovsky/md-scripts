@@ -7,13 +7,18 @@
 #SBATCH --partition=normal          # Partition/queue to run the job in. (REQUIRED)
 #SBATCH -e slurm-%j.err             # Error file for this job.
 #SBATCH -o slurm-%j.out             # Output file for this job.
-#SBATCH -A xxx       # Project allocation account name (REQUIRED)
+#SBATCH -A coa_qsh226_uksr       # Project allocation account name (REQUIRED)
 #SBATCH --mail-type ALL         # Send email when job starts/ends
-#SBATCH --mail-user xxx@xxx   # Where email is sent to (optional)
+#SBATCH --mail-user ulab222@uky.edu   # Where email is sent to (optional)
 
 module load Miniconda3
 conda init
 source ~/.bashrc
 conda activate py310
 
+# This generates a total-res$1.csv file
+# and then generates a stat-res_10_90.boxplot file
+# $1 is the batch number
+
+./dat-merger_total.sh $1
 ./stat-res_total.sh
