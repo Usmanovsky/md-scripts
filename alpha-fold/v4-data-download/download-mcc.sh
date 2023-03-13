@@ -13,6 +13,6 @@
 
 #SBATCH --account=xxx		#Name of account to run under
 
-
-xargs -n 1 -P 512 wget < url-batch5.csv
+# This downlaods all the pdb files in the csv file ($1) from AF DB
+xargs -n 1 -P 512 wget < $1
 
