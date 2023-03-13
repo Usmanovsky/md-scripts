@@ -4,6 +4,12 @@
 ### Steps for processing AlphaFold DB for analysis:
 
 - Download pdb from AlphaFold DB using **[pdb-downloader.sh](./re-download/pdb-downloader.sh)** or Dr Shao's scripts **[shao-scripts](./shao-scripts)**.
+  * For v4 AF database, copy all the scripts in **[v4-data-download](./v4-data-download)** to a folder and follow these steps:
+  * Download the v4_updated_accessions.txt from the AF website.
+  * Create batch1 csv: python3 **[select-samples.py](./v4-data-download/select-samples.py)** v4_updated_accessions.txt batch1.csv
+  * Create batches 2-5: ./**[make-batches.sh](./v4-data-download/make-batches.sh)**
+  * Create download urls for each batch e.g. for batch1: python3 **[create-url-list.py](./v4-data-download/create-url-list.py)** batch1.csv url-batch1.csv
+  * Download pdb files using urls e.g. for batch1: ./**[download-mcc.sh](./v4-data-download/download-mcc.sh)** url-batch1.csv
 - Convert pdb to dssp/dat files using **[dssp-pdb2dat.sh](./re-download/dssp-pdb2dat.sh)** or Dr Shao's version **[shao-scripts](./shao-scripts)**.
 - Convert dssp/dat to out files using **[dat-to-out.py](./re-download/dat-to-out.py)** and **[submit-dat-to-out.sh](./re-download/submit-dat-to-out.sh)**.
 - Use the scripts here **[dat-and-csv-generation](./dat-and-csv-generation)** for residue and secondary structure (ss) analysis:
