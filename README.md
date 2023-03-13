@@ -7,7 +7,7 @@
 - **[alpha-fold](./alpha-fold)** scripts are for the analysis of the fairness of the proteing structure predictions of AlphaFold2
 - **[deepchem](./deepchem)** scripts handle a host of scenarios for training ML models using the DeepChem package.
 - **des-ml** scripts can be used to train ML algorithms using the HB features of DES systems. The models can predict which 
-...systems will form DESs or not.
+systems will form DESs or not.
 - **[interface](./interface)** scripts help analyze hydrogen bond properties of DES-Water inetrfaces.
 - **[jupyter-scripts](./jupyter-scripts)** are a group of jupyter notebooks that make iterative analysis of MD data easier.
 - **[lab-gpu](./lab-gpu)** scripts help with a bunch of house-cleaning operations on a local workstation.
