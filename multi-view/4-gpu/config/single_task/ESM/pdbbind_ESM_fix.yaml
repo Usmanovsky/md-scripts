@@ -1,0 +1,49 @@
+output_dir: /scratch/ulab222/multi-view/4-gpu/torchprotein_output/
+
+dataset:
+  class: PDBBind
+  path: /scratch/ulab222/multi-view/4-gpu/protein-datasets/
+  atom_feature: null
+  bond_feature: null
+  transform:
+    class: Compose
+    transforms:
+      - class: ProteinView
+        view: "residue"
+        keys: "graph1"
+
+test_split: test
+
+task:
+  class: InteractionPrediction
+  model:
+    class: ESM
+    path: /scratch/ulab222/multi-view/4-gpu/esm-model-weights/
+    model: ESM-1b
+    readout: mean
+  model2:
+    class: GIN
+    input_dim: 66
+    hidden_dims: [ 256, 256, 256, 256 ]
+    batch_norm: yes
+    short_cut: yes
+    concat_hidden: yes
+  criterion: mse
+  metric: [ "mae", "rmse", "spearmanr" ]
+  num_mlp_layer: 2
+  normalization: False
+
+eval_metric: root mean squared error
+
+optimizer:
+  class: Adam
+  lr: 5.0e-5
+
+fix_encoder: True
+
+engine:
+  gpus: [0, 1, 2, 3]
+  batch_size: 32
+
+train:
+  num_epoch: 100

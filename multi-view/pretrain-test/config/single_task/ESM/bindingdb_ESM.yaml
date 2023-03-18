@@ -1,0 +1,52 @@
+output_dir: /scratch/ulab222/multi-view/pretrain-test/torchprotein_output/
+
+dataset:
+  class: BindingDB
+  path: /scratch/ulab222/multi-view/pretrain-test/protein-datasets/
+  atom_feature: null
+  bond_feature: null
+  transform:
+    class: Compose
+    transforms:
+      - class: TruncateProtein
+        max_length: 550
+        random: True
+        keys: "graph1"
+      - class: ProteinView
+        view: "residue"
+        keys: "graph1"
+
+test_split: holdout_test
+
+task:
+  class: InteractionPrediction
+  model:
+    class: ESM
+    path: /scratch/ulab222/multi-view/pretrain-test/esm-model-weights/
+    model: ESM-1b
+  model2:
+    class: GIN
+    input_dim: 66
+    hidden_dims: [256, 256, 256, 256]
+    batch_norm: yes
+    short_cut: yes
+    concat_hidden: yes
+  normalization: False
+  criterion: mse
+  metric: ["mae", "rmse", "spearmanr"]
+  num_mlp_layer: 2
+
+eval_metric: root mean squared error
+
+optimizer:
+  class: Adam
+  lr: 2.0e-4
+
+engine:
+  #gpus: [0, 1, 2, 3]
+  batch_size: 4
+
+lr_ratio: 0.1
+
+train:
+  num_epoch: 100

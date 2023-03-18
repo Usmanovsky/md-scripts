@@ -1,0 +1,38 @@
+output_dir: /scratch/ulab222/multi-view/pretrain-test/torchprotein_output/
+
+dataset:
+  class: BetaLactamase
+  path: /scratch/ulab222/multi-view/pretrain-test/protein-datasets/
+  atom_feature: null
+  bond_feature: null
+  transform:
+    class: Compose
+    transforms:
+      - class: ProteinView
+        view: "residue"
+
+task:
+  class: PropertyPrediction
+  model:
+    class: ProteinConvolutionalNetwork
+    input_dim: 21
+    hidden_dims: [1024, 1024]
+    kernel_size: 5
+    padding: 2
+  criterion: mse
+  metric: ["mae", "rmse", "spearmanr"]
+  normalization: False
+  num_mlp_layer: 2
+
+eval_metric: spearmanr
+
+optimizer:
+  class: Adam
+  lr: 1.0e-4
+
+engine:
+  gpus: [0]
+  batch_size: 64
+
+train:
+  num_epoch: 100

@@ -1,0 +1,46 @@
+output_dir: /scratch/ulab222/multi-view/1-gpu/torchprotein_output/
+
+dataset:
+  class: ProteinNet
+  path: /scratch/ulab222/multi-view/1-gpu/protein-datasets/
+  atom_feature: null
+  bond_feature: null
+  transform:
+    class: Compose
+    transforms:
+      - class: TruncateProtein
+        max_length: 1022
+        random: False
+      - class: ProteinView
+        view: "residue"
+
+test_split: test
+
+task:
+  class: ContactPrediction
+  model:
+    class: ESM
+    path: /scratch/ulab222/multi-view/1-gpu/esm-model-weights/
+    model: ESM-1b
+  criterion: bce
+  metric: ["accuracy", "prec@L5", "prec@5"]
+  max_length: 350
+  random_truncate: yes
+  threshold: 8.0
+  gap: 6
+  num_mlp_layer: 2
+
+eval_metric: prec@L5
+
+optimizer:
+  class: Adam
+  lr: 2.0e-4
+
+engine:
+  gpus: [0, 1, 2, 3]
+  batch_size: 2
+
+lr_ratio: 0.1
+
+train:
+  num_epoch: 50

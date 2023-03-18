@@ -1,0 +1,37 @@
+output_dir: /scratch/ulab222/multi-view/pretrain-test/torchprotein_output/
+
+dataset:
+  class: SubcellularLocalization
+  path: /scratch/ulab222/multi-view/pretrain-test/protein-datasets/
+  atom_feature: null
+  bond_feature: null
+  transform:
+    class: Compose
+    transforms:
+      - class: ProteinView
+        view: "residue"
+
+task:
+  class: PropertyPrediction
+  model:
+    class: ProteinConvolutionalNetwork
+    input_dim: 21
+    hidden_dims: [1024, 1024]
+    kernel_size: 5
+    padding: 2
+  criterion: ce
+  metric: ["acc", "mcc"]
+  num_mlp_layer: 2
+
+eval_metric: accuracy
+
+optimizer:
+  class: Adam
+  lr: 2.0e-4
+
+engine:
+  gpus: [0, 1, 2, 3]
+  batch_size: 256
+
+train:
+  num_epoch: 100
