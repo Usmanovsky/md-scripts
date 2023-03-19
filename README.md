@@ -15,4 +15,4 @@ systems will form DESs or not.
 - **[multi-view](./multi-view)** scripts help with protein structure prediction using sequences and contact maps.
 - **[plastic-extraction](./plastic-extraction)** scripts help set up and run MD simulations for DES-Water extraction processes.
 - **[template-md](./template-md)** are boiler-plate codes for running MD simulations on HPC clusters. The scripts also calculate properties
-...like RDF, HB number and lifetime.
+  like RDF, HB number and lifetime.
