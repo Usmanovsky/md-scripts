@@ -13,8 +13,9 @@ python3 stat-ss_total.py $res1 >> stat-ss_10_90.boxplot
 }
 done
 
-for res in ?[^o]*.csv
+for res in *.csv
 do
+case $res in *total-*) continue;; esac
 {
 res1=${res%.*}
 echo $res1

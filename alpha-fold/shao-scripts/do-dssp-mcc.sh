@@ -12,13 +12,13 @@
 #SBATCH --mail-type ALL				#Send email on start/end
 #SBATCH --mail-user  qsh226@uky.edu		#Where to send email
 
-#SBATCH --account=coa_qsh226_uksr		#Name of account to run under
+#SBATCH --account=xxx		#Name of account to run under
 
 
 #xargs -n 1 -P 128 wget < url-batch2.csv
 module load ccs/conda/python 
 #conda init bash
-conda activate /project/qsh226_uksr/qsh226/dssp 
+conda activate /path/to/qsh226/dssp 
 
 
 for i in {1..20}

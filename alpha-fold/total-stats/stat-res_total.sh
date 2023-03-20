@@ -11,7 +11,7 @@ python3 stat-res_total.py $dat >> stat-res_10_90.boxplot
 }
 done
 
-for dir in ?[^o]*.dat
+for dir in ???.dat
 do
 {
 dat=${dir%.*}
