@@ -7,9 +7,9 @@
 #SBATCH --partition=normal          # Partition/queue to run the job in. (REQUIRED)
 #SBATCH -e slurm-dalex-res5-%j.err             # Error file for this job.
 #SBATCH -o slurm-dalex-res5-%j.out             # Output file for this job.
-#SBATCH -A coa_qsh226_uksr       # Project allocation account name (REQUIRED)
+#SBATCH -A xxx       # Project allocation account name (REQUIRED)
 #SBATCH --mail-type ALL         # Send email when job starts/ends
-#SBATCH --mail-user ulab222@uky.edu   # Where email is sent to (optional)
+#SBATCH --mail-user xxx@xxx   # Where email is sent to (optional)
 
 module load Miniconda3
 conda init
