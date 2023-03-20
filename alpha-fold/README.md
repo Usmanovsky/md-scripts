@@ -5,7 +5,7 @@
 
 - Download pdb from AlphaFold DB using **[pdb-downloader.sh](./re-download/pdb-downloader.sh)** or Dr Shao's scripts **[shao-scripts](./shao-scripts)**.
   * For v4 AF database, copy all the scripts in **[v4-data-download](./v4-data-download)** to a folder and follow these steps:
-  * Download the v4_updated_accessions.txt from the AF website.
+  * Download the v4_updated_accessions.txt from the AF website. To sample from the whole AF database, use accessions_id.csv.
   * Create batch1 csv: python3 **[select-samples.py](./v4-data-download/select-samples.py)** v4_updated_accessions.txt batch1.csv
   * Create batches 2-5: ./**[make-batches.sh](./v4-data-download/make-batches.sh)**
   * Create download urls for each batch e.g. for batch1: python3 **[create-url-list.py](./v4-data-download/create-url-list.py)** batch1.csv url-batch1.csv
