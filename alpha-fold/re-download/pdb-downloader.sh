@@ -4,6 +4,7 @@
 link='https://alphafold.ebi.ac.uk/files'
 while IFS= read -r line; do
     echo "AlphaFoldDB ID: $line"
-    wget $link/$line
+    #wget $link/$line-model_v4.pdb
+    wget $line
 done < "$1"
 
