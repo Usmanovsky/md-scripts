@@ -1,8 +1,8 @@
 # AlphaFold
 ## Python and Bash scripts that help preprocess and analyze the AlphaFold database for protein structure predictions
-### Most of the scripts here depend on other scripts, so make sure you open each script to know what inputs and scripts are required for each step.
-### Steps for processing AlphaFold DB for analysis:
+### Most of the scripts here depend on other scripts, so make sure you open each script to know what inputs and scripts are required for each step. A lot of the SLURM scripts are necessary because some jobs take roughly a day for 1million protein structures. You can reduce that by playing around with parallelization, assuming you have the resources.
 
+### Steps for processing AlphaFold DB for analysis:
 - Download pdb from AlphaFold DB using **[pdb-downloader.sh](./re-download/pdb-downloader.sh)** or Dr Shao's scripts **[shao-scripts](./shao-scripts)**.
   * For v4 AF database, copy all the scripts in **[v4-data-download](./v4-data-download)** to a folder and follow these steps:
   * Download the v4_updated_accessions.txt from the AF website. To sample from the whole AF database, use accessions_id.csv.
