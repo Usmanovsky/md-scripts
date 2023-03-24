@@ -8,13 +8,14 @@
 #SBATCH --partition=normal          # Partition/queue to run the job in. (REQUIRED)
 #SBATCH -e slurm-dat2out3-%j.err             # Error file for this job.
 #SBATCH -o slurm-dat2out3-%j.out             # Output file for this job.
-#SBATCH -A xxx       # Project allocation account name (REQUIRED)
+#SBATCH -A coa_qsh226_uksr       # Project allocation account name (REQUIRED)
 #SBATCH --mail-type ALL         # Send email when job starts/ends
-#SBATCH --mail-user xxx@xxx   # Where email is sent to (optional)
+#SBATCH --mail-user ulab222@uky.edu   # Where email is sent to (optional)
 
 module load Miniconda3
+source ~/.bashrc
 source activate py310
 
 # This runs a script to convert dssp/dat files to out files
 # $1 is the folder path where the out-folders are located.
-./submit-dat-to-out.sh $1
+./submit-dat-to-out.sh "$1"
