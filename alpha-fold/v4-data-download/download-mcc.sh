@@ -9,8 +9,8 @@
 #SBATCH --partition=normal              #Name of the queue
 #SBATCH --mem=128g
 #SBATCH --mail-type ALL                         #Send email on start/end
-#SBATCH --mail-user  ulab222@uky.edu            #Where to send email
-#SBATCH --account=coa_qsh226_uksr               #Name of account to run under
+#SBATCH --mail-user  xxx@xxx            #Where to send email
+#SBATCH --account=xxx               #Name of account to run under
 #SBATCH -e slurm-dwnld1-%j.err             # Error file for this job.
 #SBATCH -o slurm-dwnld1-%j.out             # Output file for this job.
 

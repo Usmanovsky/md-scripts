@@ -11,4 +11,4 @@ dat_to_out () {
   }
 
 export -f dat_to_out
-find $1 -type f -name "AF*.pdb" | xargs -I {} -P 1000 bash -c 'dat_to_out  "$@"' _ {};
+find $1 -maxdepth 1 -type f -name "AF*.pdb" | xargs -I {} -P 5000 bash -c 'dat_to_out  "$@"' _ {};
