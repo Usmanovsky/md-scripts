@@ -17,5 +17,5 @@ appender () {
 }
 
 export -f appender
-find $1 -type f -name "AF*.out" | xargs -I {} -P 1000 bash -c 'appender  "$@"' _ {};
+find $1 -maxdepth 1 -type f -name "AF*.out" | xargs -I {} -P 1000 bash -c 'appender  "$@"' _ {};
 

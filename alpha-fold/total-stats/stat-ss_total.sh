@@ -15,7 +15,7 @@ done
 
 for res in *.csv
 do
-case $res in *total-*) continue;; esac
+case $res in *total-*) continue;; *batch*) continue;; esac
 {
 res1=${res%.*}
 echo $res1
