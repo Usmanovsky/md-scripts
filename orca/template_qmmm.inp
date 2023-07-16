@@ -1,0 +1,26 @@
+# avogadro generated ORCA input file
+# QM/QM2 input file
+# Optimization of xxx
+! QM/XTB B3LYP D4 def2-SVP def2/J NormalPrint RijCosX NormalSCF
+
+%pal
+nprocs 32
+end
+
+%QMMM QMATOMS {num_atoms} END END
+
+%maxcore 11000
+%base "xxx_svp_d4_32"
+
+#%scf
+#        MaxIter 125
+#        CNVDIIS 1
+#        CNVSOSCF 1
+#end
+
+%output
+        print[p_mos] true
+        print[p_basis] 5
+end
+
+* xyzfile 0 1 xxx-full.xyz
