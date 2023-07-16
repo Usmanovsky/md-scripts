@@ -13,6 +13,7 @@ systems will form DESs or not.
 - **[lab-gpu](./lab-gpu)** scripts help with a bunch of house-cleaning operations on a local workstation.
 - **[metadynamics](./metadynamics)** are for running well-tempered metadynamics simulations of plastic extraction using DESs.
 - **[multi-view](./multi-view)** scripts help with protein structure prediction using sequences and contact maps.
+- **[orca](./orca)** scripts for running QM jobs on ORCA.
 - **[plastic-extraction](./plastic-extraction)** scripts help set up and run MD simulations for DES-Water extraction processes.
 - **[template-md](./template-md)** are boiler-plate codes for running MD simulations on HPC clusters. The scripts also calculate properties
   like RDF, HB number and lifetime.
