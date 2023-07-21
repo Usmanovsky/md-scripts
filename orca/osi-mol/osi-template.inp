@@ -1,0 +1,26 @@
+# avogadro generated ORCA input file
+# Advanced Mode
+# Optimization of 6jxt
+! B3LYP D4 def2-SVP def2/J NormalPrint RijCosX NormalSCF
+#! MORead
+#% moinp "6jxt-48.gbw"
+%maxcore 10500
+%base "xxxx-svpd4-32"
+
+%pal
+nprocs 32
+end
+
+#%base "6jxt-48"
+#%scf
+#        MaxIter 125
+#        CNVDIIS 1
+#        CNVSOSCF 1
+#end
+
+%output
+        print[p_mos] true
+        print[p_basis] 5
+end
+
+* xyzfile 0 1 xxxx.xyz

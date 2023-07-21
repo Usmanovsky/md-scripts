@@ -10,7 +10,7 @@
 #SBATCH -o slurm-6jxt16-D4-b3lyp-OPT-%j.out             # Output file for this job.
 #SBATCH -A coa_qsh226_uksr       # Project allocation account name (REQUIRED)
 #SBATCH --mail-type ALL         # Send email when job starts/ends
-#SBATCH --mail-user ulab222@uky.edu   # Where email is sent to (optional)
+#SBATCH --mail-user xxx@xxx   # Where email is sent to (optional)
 
 module load openmpi-4.1.1-gcc-9.3.0-zhqxeh5
 source .bash_profile
@@ -21,5 +21,5 @@ scontrol show hostnames $SLURM_JOB_NODELIST > parent_salen.nodes
 
 # $1 is the orca .inp file
 #shifter /pscratch/sd/u/ulab/orca/orca $1
-/project/qsh226_uksr/ulab/orca/orca $1
+/path/to/ulab/orca/orca $1
 

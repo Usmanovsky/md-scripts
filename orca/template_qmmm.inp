@@ -23,4 +23,4 @@ end
         print[p_basis] 5
 end
 
-* xyzfile 0 1 xxx-full.xyz
+* xyzfile 0 1 xxx_full.xyz
