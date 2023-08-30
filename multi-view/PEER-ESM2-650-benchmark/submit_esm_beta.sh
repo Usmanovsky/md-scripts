@@ -4,7 +4,7 @@
 #SBATCH --job-name seed0betaEsm2-650M			#Nameof the job
 #SBATCH --output slurm-beta-esm2-650-seed0-%j.out                #Output file name
 #SBATCH -e slurm-beta-esm2-650-seed0-%j.err                      #error file name
-#SBATCH --account=gcl_qsh226_uksr 			#SLurm Account
+#SBATCH --account=xxx 			#SLurm Account
 #SBATCH -N 1
 #SBATCH --ntasks=1					#Number of cores
 #SBATCH -c 32

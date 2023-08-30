@@ -4,7 +4,7 @@
 #SBATCH --partition=V4V32_CAS40M192_L                   #Name of the partition
 #SBATCH --job-name DeepChem-jupyter-notebook                    #Nameof the job
 #SBATCH --output jupyter-notebook-%j-8Nov2022.log                #Output file name
-#SBATCH --account=gcl_qsh226_uksr                       #SLurm Account
+#SBATCH --account=xxx                       #SLurm Account
 #SBATCH --ntasks=40                                     #Number of cores
 #SBATCH --gres=gpu:4                                    #Number of GPU's needed
 #SBATCH --mail-type ALL

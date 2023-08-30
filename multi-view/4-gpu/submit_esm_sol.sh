@@ -4,7 +4,7 @@
 #SBATCH --job-name sol-4GPU			#Nameof the job
 #SBATCH --output slurm-solubility4gpu-%j.out                #Output file name
 #SBATCH -e slurm-solubility4gpu-%j.err                      #error file name
-#SBATCH --account=gcl_qsh226_uksr 			#SLurm Account
+#SBATCH --account=xxx 			#SLurm Account
 #SBATCH -N 1
 #SBATCH --ntasks=1					#Number of cores
 #SBATCH -c 36

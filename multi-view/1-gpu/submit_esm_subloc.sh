@@ -4,7 +4,7 @@
 #SBATCH --job-name subloc-1gpu			#Nameof the job
 #SBATCH --output slurm-subloc1g-%j.out                #Output file name
 #SBATCH -e slurm-subloc1g-%j.err                      #error file name
-#SBATCH --account=gcl_qsh226_uksr 			#SLurm Account
+#SBATCH --account=xxx 			#SLurm Account
 #SBATCH --ntasks=1					#Number of cores
 #SBATCH -c 10
 #SBATCH --gres=gpu:1					#Number of GPU's needed

@@ -4,7 +4,7 @@
 #SBATCH --job-name ss-4gpu			#Nameof the job
 #SBATCH --output slurm-ss4g-%j.out                #Output file name
 #SBATCH -e slurm-ss4g-%j.err                      #error file name
-#SBATCH --account=gcl_qsh226_uksr 			#SLurm Account
+#SBATCH --account=xxx 			#SLurm Account
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -c 36					#Number of cores

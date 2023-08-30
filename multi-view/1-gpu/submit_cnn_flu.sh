@@ -4,7 +4,7 @@
 #SBATCH --job-name cnn_flu-1gpu			#Nameof the job
 #SBATCH --output slurm-cnn_flu1gpu-%j.out                #Output file name
 #SBATCH -e slurm-cnn_flu1gpu-%j.err                      #error file name
-#SBATCH --account=gcl_qsh226_uksr 			#SLurm Account
+#SBATCH --account=xxx 			#SLurm Account
 #SBATCH --ntasks=10					#Number of cores
 #SBATCH --gres=gpu:1					#Number of GPU's needed
 #SBATCH --mail-type ALL

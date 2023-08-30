@@ -4,7 +4,7 @@
 #SBATCH --job-name stability4gpu			#Nameof the job
 #SBATCH --output slurm-stability4gpu-%j.out                #Output file name
 #SBATCH -e slurm-stability4gpu-%j.err                      #error file name
-#SBATCH --account=gcl_qsh226_uksr 			#SLurm Account
+#SBATCH --account=xxx 			#SLurm Account
 #SBATCH --ntasks=40					#Number of cores
 #SBATCH --gres=gpu:4					#Number of GPU's needed
 #SBATCH --mail-type ALL

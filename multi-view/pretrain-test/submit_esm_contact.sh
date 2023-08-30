@@ -4,7 +4,7 @@
 #SBATCH --job-name contact-4gpu			#Nameof the job
 #SBATCH --output slurm-contact4g-%j.out                #Output file name
 #SBATCH -e slurm-contact4g-%j.err                      #error file name
-#SBATCH --account=gcl_qsh226_uksr 			#SLurm Account
+#SBATCH --account=xxx 			#SLurm Account
 #SBATCH --ntasks=40					#Number of cores
 #SBATCH --gres=gpu:4					#Number of GPU's needed
 #SBATCH --mail-type ALL

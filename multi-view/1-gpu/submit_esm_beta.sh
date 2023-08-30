@@ -4,7 +4,7 @@
 #SBATCH --job-name beta-1gpu			#Nameof the job
 #SBATCH --output slurm-beta1g-%j.out                #Output file name
 #SBATCH -e slurm-beta1g-%j.err                      #error file name
-#SBATCH --account=gcl_qsh226_uksr 			#SLurm Account
+#SBATCH --account=xxx 			#SLurm Account
 #SBATCH -N 1
 #SBATCH --ntasks=10					#Number of cores
 #SBATCH --gres=gpu:1					#Number of GPU's needed

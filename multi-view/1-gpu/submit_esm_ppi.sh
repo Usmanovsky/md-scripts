@@ -4,7 +4,7 @@
 #SBATCH --job-name ppi-1gpu			#Nameof the job
 #SBATCH --output slurm-ppi1g-%j.out                #Output file name
 #SBATCH -e slurm-ppi1g-%j.err                      #error file name
-#SBATCH --account=gcl_qsh226_uksr 			#SLurm Account
+#SBATCH --account=xxx 			#SLurm Account
 #SBATCH -N 1
 #SBATCH -n 1					#Number of cores
 #SBATCH -c 20
