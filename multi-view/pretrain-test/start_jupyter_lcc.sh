@@ -4,11 +4,11 @@
 #SBATCH --partition=V4V32_CAS40M192_L                   #Name of the partition
 #SBATCH --job-name DeepChem-jupyter-notebook                    #Nameof the job
 #SBATCH --output jupyter-notebook-%j-8Nov2022.log                #Output file name
-#SBATCH --account=gol_qsh226_uksr                       #SLurm Account
+#SBATCH --account=xxx                       #SLurm Account
 #SBATCH --ntasks=10                                     #Number of cores
 #SBATCH --gres=gpu:1                                    #Number of GPU's needed
 #SBATCH --mail-type ALL
-#SBATCH --mail-user ulab222@uky.edu                     #Email to forward
+#SBATCH --mail-user xxx@xxx                     #Email to forward
 #SBATCH --time=72:00:00                                 #Time required for the Jupyter job
 
 

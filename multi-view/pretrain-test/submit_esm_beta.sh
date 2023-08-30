@@ -4,12 +4,12 @@
 #SBATCH --job-name beta-4gpu			#Nameof the job
 #SBATCH --output slurm-beta4g-%j.out                #Output file name
 #SBATCH -e slurm-beta4g-%j.err                      #error file name
-#SBATCH --account=gol_qsh226_uksr 			#SLurm Account
+#SBATCH --account=xxx 			#SLurm Account
 #SBATCH -N 1
 #SBATCH --ntasks=40					#Number of cores
 #SBATCH --gres=gpu:4					#Number of GPU's needed
 #SBATCH --mail-type ALL
-#SBATCH --mail-user ulab222@uky.edu			#Email to forward
+#SBATCH --mail-user xxx@xxx			#Email to forward
 #SBATCH --time=72:00:00					#Time required for the Jupyter job
 
 module load ccs/cuda/11.2.0_460.27.04

@@ -9,7 +9,7 @@
 #SBATCH -c 10
 #SBATCH --gres=gpu:1					#Number of GPU's needed
 #SBATCH --mail-type ALL
-#SBATCH --mail-user ulab222@uky.edu			#Email to forward
+#SBATCH --mail-user xxx@xxx			#Email to forward
 #SBATCH --time=55:00:00					#Time required for the Jupyter job
 
 module load ccs/cuda/11.2.0_460.27.04
