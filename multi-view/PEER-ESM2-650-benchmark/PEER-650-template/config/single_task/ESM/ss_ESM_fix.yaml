@@ -1,0 +1,44 @@
+output_dir: /scratch/ulab222/PEER-xxx-seed0/torchprotein_output/
+
+dataset:
+  class: SecondaryStructure
+  path: /scratch/ulab222/PEER-xxx-seed0/protein-datasets/
+  atom_feature: null
+  bond_feature: null
+  transform:
+    class: Compose
+    transforms:
+      - class: TruncateProtein
+        max_length: 1022
+        random: False
+      - class: ProteinView
+        view: "residue"
+
+test_split: cb513
+
+task:
+  class: NodePropertyPrediction
+  model:
+    class: ESM
+    path: /scratch/ulab222/PEER-xxx-seed0/esm-model-weights/
+    model: ESM2-650
+    readout: mean
+  criterion: ce
+  metric: ["micro_acc", "macro_acc"]
+  num_mlp_layer: 2
+  num_class: 3
+
+eval_metric: macro_acc
+
+optimizer:
+  class: Adam
+  lr: 5.0e-5
+
+fix_encoder: True
+
+engine:
+  #gpus: [0, 1, 2, 3]
+  batch_size: 8
+
+train:
+  num_epoch: 100

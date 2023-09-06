@@ -1,0 +1,71 @@
+output_dir: ~/scratch/torchprotein_output/
+
+datasets:
+  - class: PDBBind
+    path: ~/scratch/protein-datasets/
+    atom_feature: null
+    bond_feature: null
+    center: True
+    test_split: test
+    transform:
+      class: Compose
+      transforms:
+        - class: ProteinView
+          view: "residue"
+          keys: "graph1"
+  - class: Fold
+    path: ~/scratch/protein-datasets/
+    test_split: test_fold_holdout
+    atom_feature: null
+    bond_feature: null
+    transform:
+      class: Compose
+      transforms:
+        - class: TruncateProtein
+          max_length: 200
+          random: True
+        - class: ProteinView
+          view: "residue"
+
+tasks:
+  - class: InteractionPrediction
+    model2:
+      class: GIN
+      input_dim: 66
+      hidden_dims: [256, 256, 256, 256]
+      batch_norm: yes
+      short_cut: yes
+      concat_hidden: yes
+    normalization: False
+    criterion: mse
+    metric: ["mae", "rmse", "spearmanr"]
+    num_mlp_layer: 2
+  - class: PropertyPrediction
+    criterion: ce
+    metric: [ "acc", "mcc" ]
+    num_mlp_layer: 2
+    num_class: 1195
+
+model:
+  class: ProteinBERT
+  input_dim: 21
+  hidden_dim: 512
+  num_layers: 4
+  num_heads: 8
+  intermediate_dim: 2048
+  hidden_dropout: 0.1
+  attention_dropout: 0.1
+
+eval_metric: Center - PDBBind root mean squared error
+
+optimizer:
+  class: Adam
+  lr: 5.0e-5
+
+engine:
+  gpus: [0, 1, 2, 3]
+  batch_size: 8
+
+train:
+  num_epoch: 100
+  tradeoff: 1

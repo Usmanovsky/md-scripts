@@ -1,0 +1,43 @@
+output_dir: /scratch/ulab222/PEER-xxx-seed0/torchprotein_output/
+
+dataset:
+  class: Solubility
+  path: /scratch/ulab222/PEER-xxx-seed0/protein-datasets/
+  atom_feature: null
+  bond_feature: null
+  transform:
+    class: Compose
+    transforms:
+      - class: TruncateProtein
+        max_length: 550
+        random: False
+      - class: ProteinView
+        view: "residue"
+
+task:
+  class: PropertyPrediction
+  model:
+    class: ESM
+    path: /scratch/ulab222/PEER-xxx-seed0/esm-model-weights/
+    model: ESM2-650    
+  criterion: ce
+  metric: ["acc", "mcc"]
+  num_class: 2
+  num_mlp_layer: 2
+
+eval_metric: accuracy
+
+#checkpoint: /scratch/ulab222/PEER-xxx-seed0/torchprotein_output/PropertyPrediction/Solubility/ESM_2023-04-06-09-08-56/model_epoch_60.pth
+
+optimizer:
+  class: Adam
+  lr: 2.0e-4
+
+lr_ratio: 0.1
+
+engine:
+  gpus: [0] #, 1, 2, 3]
+  batch_size: 4
+
+train:
+  num_epoch: 100
