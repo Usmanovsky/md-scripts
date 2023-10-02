@@ -1,6 +1,6 @@
 # md-scripts
-## Python and Bash scripts that help prepare, run and analyze MD simulations for deep eutectic solvents (DESs) on GROMACS
-
+## Python and Bash scripts that mostly help prepare, run and analyze MD simulations for deep eutectic solvents (DESs) and proteins on GROMACS
+Each project folder has its own scripts. These scripts have kept me warm on cold, lonely nights during my PhD. I hope they comfort you as well.
 - **[DES-DES](./DES-DES)** houses scripts for simulating nultiple DESs in a box.
 - **[DES-IRC](./DES-IRC)** scripts are for the automation of lots of simulations e.g. if you have 500 DESs to simulate and analyze.
 - **[DES-Water](./DES-Water)** scripts are for simulating mixtures of aqueous DES systems.
