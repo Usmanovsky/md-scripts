@@ -1,10 +1,9 @@
 #!/bin/bash
 # This script calculates rmsd, rmsf, contact map and sasa.
 #source ~/.bashrc
-mvv(){ mkdir -p "${@: -1}" && mv "${@:1:$#-1}" "$_"; }
-
 h='-noH'
 AP="${1:-APOE}"
+mvv(){ mkdir -p "${@: -1}" && mv "${@:1:$#-1}" "$_"; }
 
 # RMSD for c-alpha
 echo 3 3 | gmx_gpu rms -f $AP-sol5.trr -s $AP-sol1.tpr -n $AP-sol -o rmsd-$AP.xvg -nice 1
@@ -35,7 +34,7 @@ echo 1 | gmx_gpu sasa -f $AP-sol5.trr -s $AP-sol1.tpr -n $AP-sol.ndx -or $AP-sas
 mvv *-sasa-*xvg sasa
 
 # SS
-export DSSP=/home/AD/ulab222/miniconda3/envs/mkdssp/bin/mkdssp #/data1/qsh226/anaconda3/bin/mkdssp
+export DSSP=/data1/qsh226/anaconda3/bin/mkdssp
 echo 7 | gmx_gpu do_dssp -f $AP-sol5.trr -s $AP-sol1.tpr -n $AP-sol -ssdump $AP-ssdump.dat -o $AP-ss.xpm -sc $AP-scount.xvg
 mvv *ssdump.dat *scount.xvg *-ss.xpm ss
 
@@ -47,6 +46,6 @@ echo "Completed $AP analysis"
 address="ulab20464@gmail.com"
 DATETIME="$(date '+%Y-%m-%d_%H-%M-%S')"
 subject="$AP complete ${DATETIME}"
-body="Backup to HDD2 is complete"
+body="Completed $AP analysis"
 #attach=backupHDD2-lab93_$x.log
-echo $body | mail -s $subject $address  # -a $attach
+echo $body | mail -s $subject -r $address  # -a $attach

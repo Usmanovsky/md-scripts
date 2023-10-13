@@ -1,0 +1,37 @@
+black&white = no ; Obsolete
+titlefont = Times-Roman ; A PostScript Font
+titlefontsize = 20 ; Font size (pt)
+legend = yes ; Show the legend
+legendfont = Times-Roman ; A PostScript Font
+legendlabel = ; Used when there is none in the .xpm
+legend2label = ; Used when merging two xpm’s
+legendfontsize = 70 ; Font size (pt)
+xbox = 30.0 ; x-size of a matrix element
+ybox = 40.0 ; y-size of a matrix element
+matrixspacing = 4.0 ; Space between 2 matrices
+xoffset = 0.0 ; Between matrix and bounding box
+yoffset = 6.0 ; Between matrix and bounding box
+;— Axis options; x-axis —
+x-major = 55 ; Major ticks on x axis every … frames
+x-minor = 10 ; Id. Minor ticks
+x-firstmajor = 0 ; First frame for major tick
+x-majorat0 = yes ; Major tick at first frame
+x-majorticklen = 10.0 ; x-majorticklength
+x-minorticklen = 5.0 ; x-minorticklength
+x-label = ; Used when there is none in the .xpm
+x-fontsize = 80 ; Font size (pt)
+x-font = Times-Roman ; A PostScript Font
+x-tickfontsize = 50 ; Font size (pt)
+x-tickfont = Helvetica ; A PostScript Font
+;— Axis options; y-axis —
+y-major = 2
+y-minor = 1
+y-firstmajor = 0
+y-majorat0 = no
+y-majorticklen = 8.0
+y-minorticklen = 4.0
+y-label = 
+y-fontsize = 100
+y-font = Times-Roman
+y-tickfontsize = 46
+y-tickfont = Helvetica
